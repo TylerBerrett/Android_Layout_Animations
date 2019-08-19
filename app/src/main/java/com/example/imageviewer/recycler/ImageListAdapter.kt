@@ -1,13 +1,18 @@
 package com.example.imageviewer.recycler
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imageviewer.R
 import com.example.imageviewer.activites.DetailsActivity
+import com.example.imageviewer.activites.MainActivity
 import com.example.imageviewer.model.ImageData
 import kotlinx.android.synthetic.main.image_item_layout.view.*
 
@@ -26,8 +31,9 @@ class ImageListAdapter(val data: ArrayList<ImageData>) : RecyclerView.Adapter<Im
 
         holder.all.setOnClickListener {
             val intent = Intent(it.context, DetailsActivity::class.java)
+            val options = ActivityOptions.makeSceneTransitionAnimation(it.context as Activity, holder.img, "grow_photo").toBundle()
             intent.putExtra("key", data[position])
-            startActivity(it.context, intent, null)
+            startActivity(it.context, intent, options)
         }
     }
 

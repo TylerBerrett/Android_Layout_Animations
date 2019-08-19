@@ -10,6 +10,7 @@
 
     <ImageView
             android:id="@+id/img_main"
+            android:transitionName="grow_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

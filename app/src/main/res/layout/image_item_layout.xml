@@ -12,6 +12,7 @@
 
     <ImageView
             android:id="@+id/uri_img"
+            android:transitionName="grow_photo"
             android:src="@drawable/ic_launcher_background"
             android:layout_width="100dp"
             android:layout_height="100dp"
