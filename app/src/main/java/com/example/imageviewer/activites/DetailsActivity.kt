@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.Explode
 import android.transition.Fade
+import android.transition.Slide
 import android.view.Window
 import com.example.imageviewer.R
 import com.example.imageviewer.model.ImageData
@@ -17,7 +18,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
-        window.enterTransition = Fade()
+        window.enterTransition = Explode()
         window.exitTransition = Explode()
 
         setContentView(R.layout.activity_details)
